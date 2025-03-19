@@ -1,0 +1,66 @@
+description <http://example.com/actuator/description/usecases#> as usecases {
+	uses <http://example.com/actuator/vocabulary/base#> as base
+	uses <http://example.com/actuator/vocabulary/actuator#> as actuator
+	extends <http://example.com/actuator/description/objectives#> as objectives
+	
+	instance provide-actuation-to-aileron : actuator:UseCase [
+		base:hasIdentifier "UC 1"
+		base:hasCanonicalName "provideActuationToAileron"
+		base:aggregates transmit-actuation-force
+		base:aggregates maintain-position
+		base:aggregates execute-failsafe-response
+		base:aggregates recover-energy
+		actuator:InteractsWith environment
+		actuator:InteractsWith wing
+		actuator:InteractsWith aileron
+		actuator:InteractsWith flight-control-computer
+		actuator:InteractsWith electric-power-supply
+		actuator:Achieves objectives:transmitting-actuation-force
+		]
+		
+	instance transmit-actuation-force : actuator:UseCase [
+		base:hasIdentifier "UC 1-1"
+		base:hasCanonicalName "transmitActuationForce"
+		]
+		
+	instance maintain-position : actuator:UseCase [
+		base:hasIdentifier "UC 1-2"
+		base:hasCanonicalName "maintainPosition"
+		]
+		
+	instance execute-failsafe-response : actuator:UseCase [
+		base:hasIdentifier "UC 1-3"
+		base:hasCanonicalName "executeFailSafeResponse"
+		]
+		
+	instance recover-energy : actuator:UseCase [
+		base:hasIdentifier "UC 1-4"
+		base:hasCanonicalName "recoverEnergy"
+		]
+		
+	instance environment : actuator:Actor[
+		base:hasIdentifier "Actor 1"
+		base:hasCanonicalName "Environment"
+		
+	]
+	
+	instance wing : actuator:Actor[
+		base:hasIdentifier "Actor 2"
+		base:hasCanonicalName "Wing"
+	]
+	
+	instance aileron : actuator:Actor[
+		base:hasIdentifier "Actor 3"
+		base:hasCanonicalName "Aileron"
+	]
+	
+	instance flight-control-computer : actuator:Actor[
+		base:hasIdentifier "Actor 4"
+		base:hasCanonicalName "Flight Control Computer"
+	]
+	
+	instance electric-power-supply : actuator:Actor[
+		base:hasIdentifier "Actor 5"
+		base:hasCanonicalName "Electric Power Supply"
+	]
+}

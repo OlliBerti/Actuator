@@ -1,0 +1,41 @@
+vocabulary <http://example.com/actuator/vocabulary/base#> as base {
+	
+	extends <http://www.w3.org/2001/XMLSchema#> as xsd
+    extends <http://purl.org/dc/elements/1.1/> as dc
+	extends <http://www.w3.org/2000/01/rdf-schema#> as rdfs
+	extends <http://www.w3.org/2001/XMLSchema#> as xsd
+	
+	
+	@rdfs:comment "The class of things having an id and a canonical name"
+	aspect IdentifiedThing [
+	  key hasIdentifier
+	]
+	@rdfs:comment "The has canonical name property"
+	scalar property hasCanonicalName [
+	  domain IdentifiedThing
+	  range xsd:string
+	]
+	@rdfs:comment "The has identifier property"
+	scalar property hasIdentifier [
+	  domain IdentifiedThing
+	  range xsd:string
+	  functional
+	]
+	@rdfs:comment "The has description property"
+	scalar property hasDescription [
+	  domain IdentifiedThing
+	  range xsd:string
+	]
+	 @rdfs:comment "The class of things that can be aggregated"
+	aspect AggregatedThing
+	@rdfs:comment "The aggregates relation between aggregated things"
+	relation entity Aggregates [
+	  from AggregatedThing
+	  to AggregatedThing
+	  forward aggregates
+	  reverse isAggregatedIn
+	  asymmetric
+	  irreflexive
+	]
+	
+}

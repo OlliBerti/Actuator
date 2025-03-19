@@ -1,0 +1,134 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://example.com/actuator/vocabulary/actuator#"
+     xml:base="http://example.com/actuator/vocabulary/actuator"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:oml="http://opencaesar.io/oml#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:actuator="http://example.com/actuator/vocabulary/actuator#">
+    <owl:Ontology rdf:about="http://example.com/actuator/vocabulary/actuator">
+        <owl:imports rdf:resource="http://example.com/actuator/vocabulary/base"/>
+        <oml:namespace rdf:resource="http://example.com/actuator/vocabulary/actuator#"/>
+        <oml:prefix>actuator</oml:prefix>
+        <oml:type rdf:resource="http://opencaesar.io/oml#Vocabulary"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://example.com/actuator/vocabulary/actuator#Achieves -->
+
+
+    <owl:ObjectProperty rdf:about="http://example.com/actuator/vocabulary/actuator#Achieves">
+        <rdfs:domain rdf:resource="http://example.com/actuator/vocabulary/actuator#UseCase"/>
+        <rdfs:range rdf:resource="http://example.com/actuator/vocabulary/actuator#Objective"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#UnreifiedRelation"/>
+        <rdfs:comment>The relation defines that a Use Case contributes to achieving an Objective.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.com/actuator/vocabulary/actuator#InteractsWith -->
+
+
+    <owl:ObjectProperty rdf:about="http://example.com/actuator/vocabulary/actuator#InteractsWith">
+        <rdfs:domain rdf:resource="http://example.com/actuator/vocabulary/actuator#UseCase"/>
+        <rdfs:range rdf:resource="http://example.com/actuator/vocabulary/actuator#Actor"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#UnreifiedRelation"/>
+        <rdfs:comment>The relation defines an interaction between a Use Case and an Actor</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://example.com/actuator/vocabulary/actuator#Actor -->
+
+
+    <owl:Class rdf:about="http://example.com/actuator/vocabulary/actuator#Actor">
+        <rdfs:subClassOf rdf:resource="http://example.com/actuator/vocabulary/base#IdentifiedThing"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#Concept"/>
+        <rdfs:comment>An Actor represents an external entity, such as a person or another system, 
+	that interacts with the system to achieve a specific goal or initiate a Use Case.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com/actuator/vocabulary/actuator#Objective -->
+
+
+    <owl:Class rdf:about="http://example.com/actuator/vocabulary/actuator#Objective">
+        <rdfs:subClassOf rdf:resource="http://example.com/actuator/vocabulary/base#AggregatedThing"/>
+        <rdfs:subClassOf rdf:resource="http://example.com/actuator/vocabulary/base#IdentifiedThing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.com/actuator/vocabulary/base#aggregates"/>
+                <owl:allValuesFrom rdf:resource="http://example.com/actuator/vocabulary/actuator#Objective"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.com/actuator/vocabulary/base#isAggregatedIn"/>
+                <owl:allValuesFrom rdf:resource="http://example.com/actuator/vocabulary/actuator#Objective"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <oml:type rdf:resource="http://opencaesar.io/oml#Concept"/>
+        <rdfs:comment>Objective is to provide value to one or more actors</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com/actuator/vocabulary/actuator#UseCase -->
+
+
+    <owl:Class rdf:about="http://example.com/actuator/vocabulary/actuator#UseCase">
+        <rdfs:subClassOf rdf:resource="http://example.com/actuator/vocabulary/base#AggregatedThing"/>
+        <rdfs:subClassOf rdf:resource="http://example.com/actuator/vocabulary/base#IdentifiedThing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.com/actuator/vocabulary/base#aggregates"/>
+                <owl:allValuesFrom rdf:resource="http://example.com/actuator/vocabulary/actuator#UseCase"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.com/actuator/vocabulary/base#isAggregatedIn"/>
+                <owl:allValuesFrom rdf:resource="http://example.com/actuator/vocabulary/actuator#UseCase"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <oml:type rdf:resource="http://opencaesar.io/oml#Concept"/>
+        <rdfs:comment>An Use Case represents a structured interaction 
+	between a system and its actors, describing the functional behavior, 
+	key scenarios, and system responsibilities needed to achieve a specific goal</rdfs:comment>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.5.0.2023-01-14T12:41:38Z) https://github.com/owlcs/owlapi/ -->
+
+

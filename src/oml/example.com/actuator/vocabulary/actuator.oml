@@ -1,0 +1,37 @@
+vocabulary <http://example.com/actuator/vocabulary/actuator#> as actuator {
+		
+    extends <http://www.w3.org/2000/01/rdf-schema#> as rdfs
+    extends <http://example.com/actuator/vocabulary/base#> as base
+    
+    
+    @rdfs:comment "Objective is to provide value to one or more actors"
+	concept Objective < base:IdentifiedThing, base:AggregatedThing [
+	restricts all base:aggregates to Objective
+	restricts all base:isAggregatedIn to Objective
+	]
+    
+    @rdfs:comment "An Use Case represents a structured interaction 
+	between a system and its actors, describing the functional behavior, 
+	key scenarios, and system responsibilities needed to achieve a specific goal"
+	concept UseCase < base:IdentifiedThing, base:AggregatedThing [
+	restricts all base:aggregates to UseCase
+	restricts all base:isAggregatedIn to UseCase
+	]
+    
+    @rdfs:comment "An Actor represents an external entity, such as a person or another system, 
+	that interacts with the system to achieve a specific goal or initiate a Use Case."
+	concept Actor < base:IdentifiedThing [
+	]
+	
+	@rdfs:comment "The relation defines that a Use Case contributes to achieving an Objective."
+	relation Achieves [
+		from UseCase
+		to Objective
+	]
+    
+    @rdfs:comment "The relation defines an interaction between a Use Case and an Actor"
+	relation InteractsWith [
+		from UseCase
+		to Actor
+	]
+}

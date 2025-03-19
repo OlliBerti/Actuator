@@ -1,0 +1,3 @@
+description bundle <http://example.com/actuator/description/bundle#> as ^bundle {
+	uses <http://example.com/actuator/vocabulary/bundle#>
+}

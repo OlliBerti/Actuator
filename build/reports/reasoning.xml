@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuites name="http://example.com/actuator/description/bundle">
+  <testsuite name="Consistency">
+    <testcase name="http://example.com/actuator/description/bundle"/>
+  </testsuite>
+  <testsuite name="Satisfiability">
+    <testcase name="http://example.com/actuator/vocabulary/base#AggregatedThing"/>
+    <testcase name="http://www.w3.org/2002/07/owl#Thing"/>
+    <testcase name="http://example.com/actuator/vocabulary/base#IdentifiedThing"/>
+    <testcase name="http://example.com/actuator/vocabulary/actuator#Objective"/>
+    <testcase name="http://example.com/actuator/vocabulary/base#Aggregates"/>
+    <testcase name="http://example.com/actuator/vocabulary/actuator#UseCase"/>
+    <testcase name="http://example.com/actuator/vocabulary/actuator#Actor"/>
+  </testsuite>
+</testsuites>

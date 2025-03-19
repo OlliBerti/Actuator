@@ -1,0 +1,13 @@
+description <http://example.com/actuator/description/objectives#> as objectives {
+	uses <http://example.com/actuator/vocabulary/base#> as base
+	uses <http://example.com/actuator/vocabulary/actuator#> as actuator
+
+	instance transmitting-actuation-force : actuator:Objective [
+		base:hasIdentifier "1"
+		base:hasCanonicalName "Main Objective"
+		base:hasDescription "The Electromechanical Actuator (EMA) controls aileron by generating and transmitting force. 
+		Integrated into the wing and connected to the flight control system, 
+		it receives commands from the Flight Control Computer (FCC) and provides real-time feedback."
+	]
+	
+}
