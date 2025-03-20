@@ -1,0 +1,26 @@
+PREFIX base:        <http://example.com/actuator/vocabulary/base#>
+PREFIX actuator:    <http://example.com/actuator/vocabulary/actuator#>
+PREFIX objectives:  <http://example.com/actuator/description/objectives#>
+
+SELECT DISTINCT ?uc_id ?uc_name ?aggregated_uc ?interacts_with ?achieves_obj
+WHERE {
+    ?uc a actuator:UseCase ;
+        base:hasIdentifier ?uc_id ;
+        base:hasCanonicalName ?uc_name .
+    
+    OPTIONAL {
+        ?uc base:aggregates ?agg .
+        ?agg base:hasCanonicalName ?aggregated_uc .
+    }
+    
+    OPTIONAL {
+        ?uc actuator:InteractsWith ?actor .
+        ?actor base:hasCanonicalName ?interacts_with .
+    }
+    
+    OPTIONAL {
+        ?uc actuator:Achieves ?obj .
+        ?obj base:hasCanonicalName ?achieves_obj .
+    }
+}
+ORDER BY ?uc_id ?aggregated_uc ?interacts_with ?achieves_obj
