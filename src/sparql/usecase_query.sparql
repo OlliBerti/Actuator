@@ -1,0 +1,8 @@
+PREFIX base: <http://example.com/actuator/vocabulary/base#>
+PREFIX actuator: <http://example.com/actuator/vocabulary/actuator#>
+PREFIX objectives: <http://example.com/actuator/description/objectives#>
+
+SELECT DISTINCT ?hallo
+WHERE {
+    ?hallo a actuator:UseCase .
+}
