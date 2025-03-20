@@ -2,7 +2,7 @@ PREFIX base: <http://example.com/actuator/vocabulary/base#>
 PREFIX actuator: <http://example.com/actuator/vocabulary/actuator#>
 PREFIX objectives: <http://example.com/actuator/description/objectives#>
 
-SELECT DISTINCT ?hallo
+SELECT DISTINCT ?uc 
 WHERE {
-    ?hallo a actuator:UseCase .
+    ?uc a actuator:UseCase .
 }
