@@ -1,4 +1,5 @@
 vocabulary bundle <http://example.com/actuator/vocabulary/bundle#> as ^bundle {
 	
+	includes <http://example.com/actuator/vocabulary/base#>
 	includes <http://example.com/actuator/vocabulary/actuator#>
 }

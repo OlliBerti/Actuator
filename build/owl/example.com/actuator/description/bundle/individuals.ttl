@@ -3,7 +3,23 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
 
+<http://example.com/actuator/description/usecases#wing>
+        rdf:type    <http://example.com/actuator/vocabulary/actuator#Actor> , <http://example.com/actuator/vocabulary/base#IdentifiedThing> , owl:Thing ;
+        <http://example.com/actuator/vocabulary/base#hasCanonicalName>
+                "Wing" ;
+        <http://example.com/actuator/vocabulary/base#hasIdentifier>
+                "Actor 2" ;
+        owl:sameAs  <http://example.com/actuator/description/usecases#wing> .
+
 owl:topDataProperty  rdf:type  owl:DatatypeProperty .
+
+<http://example.com/actuator/description/usecases#aileron>
+        rdf:type    <http://example.com/actuator/vocabulary/actuator#Actor> , <http://example.com/actuator/vocabulary/base#IdentifiedThing> , owl:Thing ;
+        <http://example.com/actuator/vocabulary/base#hasCanonicalName>
+                "Aileron" ;
+        <http://example.com/actuator/vocabulary/base#hasIdentifier>
+                "Actor 3" ;
+        owl:sameAs  <http://example.com/actuator/description/usecases#aileron> .
 
 <http://example.com/actuator/vocabulary/actuator#Achieves>
         rdf:type  owl:ObjectProperty .
@@ -14,10 +30,36 @@ owl:topDataProperty  rdf:type  owl:DatatypeProperty .
 <http://example.com/actuator/vocabulary/base#IdentifiedThing>
         rdf:type  owl:Class .
 
+<http://example.com/actuator/description/usecases#maintain-position>
+        rdf:type    <http://example.com/actuator/vocabulary/base#IdentifiedThing> , <http://example.com/actuator/vocabulary/actuator#UseCase> , <http://example.com/actuator/vocabulary/base#AggregatedThing> , owl:Thing ;
+        <http://example.com/actuator/vocabulary/base#hasCanonicalName>
+                "maintainPosition" ;
+        <http://example.com/actuator/vocabulary/base#hasIdentifier>
+                "UC 1-2" ;
+        <http://example.com/actuator/vocabulary/base#isAggregatedIn>
+                <http://example.com/actuator/description/usecases#provide-actuation-to-aileron> ;
+        owl:sameAs  <http://example.com/actuator/description/usecases#maintain-position> .
+
 owl:Nothing  rdf:type  owl:Class .
 
 <http://opencaesar.io/oml#hasTarget>
         rdf:type  owl:ObjectProperty .
+
+<http://example.com/actuator/description/usecases#flight-control-computer>
+        rdf:type    <http://example.com/actuator/vocabulary/actuator#Actor> , <http://example.com/actuator/vocabulary/base#IdentifiedThing> , owl:Thing ;
+        <http://example.com/actuator/vocabulary/base#hasCanonicalName>
+                "Flight Control Computer" ;
+        <http://example.com/actuator/vocabulary/base#hasIdentifier>
+                "Actor 4" ;
+        owl:sameAs  <http://example.com/actuator/description/usecases#flight-control-computer> .
+
+<http://example.com/actuator/description/usecases#environment>
+        rdf:type    <http://example.com/actuator/vocabulary/actuator#Actor> , <http://example.com/actuator/vocabulary/base#IdentifiedThing> , owl:Thing ;
+        <http://example.com/actuator/vocabulary/base#hasCanonicalName>
+                "Environment" ;
+        <http://example.com/actuator/vocabulary/base#hasIdentifier>
+                "Actor 1" ;
+        owl:sameAs  <http://example.com/actuator/description/usecases#environment> .
 
 <http://example.com/actuator/vocabulary/base#isAggregatedIn>
         rdf:type  owl:ObjectProperty .
@@ -25,7 +67,31 @@ owl:Nothing  rdf:type  owl:Class .
 <http://example.com/actuator/vocabulary/base#Aggregates>
         rdf:type  owl:Class .
 
+<http://example.com/actuator/description/objectives#transmitting-actuation-force>
+        rdf:type    <http://example.com/actuator/vocabulary/base#IdentifiedThing> , <http://example.com/actuator/vocabulary/base#AggregatedThing> , <http://example.com/actuator/vocabulary/actuator#Objective> , owl:Thing ;
+        <http://example.com/actuator/vocabulary/base#hasCanonicalName>
+                "Main Objective" ;
+        <http://example.com/actuator/vocabulary/base#hasDescription>
+                "The Electromechanical Actuator (EMA) controls aileron by generating and transmitting force. \n\t\tIntegrated into the wing and connected to the flight control system, \n\t\tit receives commands from the Flight Control Computer (FCC) and provides real-time feedback." ;
+        <http://example.com/actuator/vocabulary/base#hasIdentifier>
+                "1" ;
+        owl:sameAs  <http://example.com/actuator/description/objectives#transmitting-actuation-force> .
+
 owl:Thing  rdf:type  owl:Class .
+
+<http://example.com/actuator/description/usecases#provide-actuation-to-aileron>
+        rdf:type    <http://example.com/actuator/vocabulary/base#IdentifiedThing> , <http://example.com/actuator/vocabulary/actuator#UseCase> , <http://example.com/actuator/vocabulary/base#AggregatedThing> , owl:Thing ;
+        <http://example.com/actuator/vocabulary/actuator#Achieves>
+                <http://example.com/actuator/description/objectives#transmitting-actuation-force> ;
+        <http://example.com/actuator/vocabulary/actuator#InteractsWith>
+                <http://example.com/actuator/description/usecases#flight-control-computer> , <http://example.com/actuator/description/usecases#electric-power-supply> , <http://example.com/actuator/description/usecases#wing> , <http://example.com/actuator/description/usecases#aileron> , <http://example.com/actuator/description/usecases#environment> ;
+        <http://example.com/actuator/vocabulary/base#aggregates>
+                <http://example.com/actuator/description/usecases#transmit-actuation-force> , <http://example.com/actuator/description/usecases#recover-energy> , <http://example.com/actuator/description/usecases#execute-failsafe-response> , <http://example.com/actuator/description/usecases#maintain-position> ;
+        <http://example.com/actuator/vocabulary/base#hasCanonicalName>
+                "provideActuationToAileron" ;
+        <http://example.com/actuator/vocabulary/base#hasIdentifier>
+                "UC 1" ;
+        owl:sameAs  <http://example.com/actuator/description/usecases#provide-actuation-to-aileron> .
 
 <http://example.com/actuator/vocabulary/actuator#UseCase>
         rdf:type  owl:Class .
@@ -34,7 +100,25 @@ owl:Thing  rdf:type  owl:Class .
         rdf:type         owl:Ontology ;
         rdfs:comment     "Generated by Owl Reason 2.14.0" ;
         owl:imports      <http://example.com/actuator/description/bundle> ;
-        owl:versionInfo  "1742392907" .
+        owl:versionInfo  "1742467195" .
+
+<http://example.com/actuator/description/usecases#transmit-actuation-force>
+        rdf:type    <http://example.com/actuator/vocabulary/base#IdentifiedThing> , <http://example.com/actuator/vocabulary/actuator#UseCase> , <http://example.com/actuator/vocabulary/base#AggregatedThing> , owl:Thing ;
+        <http://example.com/actuator/vocabulary/base#hasCanonicalName>
+                "transmitActuationForce" ;
+        <http://example.com/actuator/vocabulary/base#hasIdentifier>
+                "UC 1-1" ;
+        <http://example.com/actuator/vocabulary/base#isAggregatedIn>
+                <http://example.com/actuator/description/usecases#provide-actuation-to-aileron> ;
+        owl:sameAs  <http://example.com/actuator/description/usecases#transmit-actuation-force> .
+
+<http://example.com/actuator/description/usecases#electric-power-supply>
+        rdf:type    <http://example.com/actuator/vocabulary/actuator#Actor> , <http://example.com/actuator/vocabulary/base#IdentifiedThing> , owl:Thing ;
+        <http://example.com/actuator/vocabulary/base#hasCanonicalName>
+                "Electric Power Supply" ;
+        <http://example.com/actuator/vocabulary/base#hasIdentifier>
+                "Actor 5" ;
+        owl:sameAs  <http://example.com/actuator/description/usecases#electric-power-supply> .
 
 <http://example.com/actuator/vocabulary/base#aggregates>
         rdf:type  owl:ObjectProperty .
@@ -53,6 +137,26 @@ owl:topObjectProperty
 
 <http://example.com/actuator/vocabulary/base#AggregatedThing>
         rdf:type  owl:Class .
+
+<http://example.com/actuator/description/usecases#execute-failsafe-response>
+        rdf:type    <http://example.com/actuator/vocabulary/base#IdentifiedThing> , <http://example.com/actuator/vocabulary/actuator#UseCase> , <http://example.com/actuator/vocabulary/base#AggregatedThing> , owl:Thing ;
+        <http://example.com/actuator/vocabulary/base#hasCanonicalName>
+                "executeFailSafeResponse" ;
+        <http://example.com/actuator/vocabulary/base#hasIdentifier>
+                "UC 1-3" ;
+        <http://example.com/actuator/vocabulary/base#isAggregatedIn>
+                <http://example.com/actuator/description/usecases#provide-actuation-to-aileron> ;
+        owl:sameAs  <http://example.com/actuator/description/usecases#execute-failsafe-response> .
+
+<http://example.com/actuator/description/usecases#recover-energy>
+        rdf:type    <http://example.com/actuator/vocabulary/base#IdentifiedThing> , <http://example.com/actuator/vocabulary/actuator#UseCase> , <http://example.com/actuator/vocabulary/base#AggregatedThing> , owl:Thing ;
+        <http://example.com/actuator/vocabulary/base#hasCanonicalName>
+                "recoverEnergy" ;
+        <http://example.com/actuator/vocabulary/base#hasIdentifier>
+                "UC 1-4" ;
+        <http://example.com/actuator/vocabulary/base#isAggregatedIn>
+                <http://example.com/actuator/description/usecases#provide-actuation-to-aileron> ;
+        owl:sameAs  <http://example.com/actuator/description/usecases#recover-energy> .
 
 <http://example.com/actuator/vocabulary/actuator#Objective>
         rdf:type  owl:Class .
