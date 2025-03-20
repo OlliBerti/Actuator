@@ -27,10 +27,19 @@ jobs:
 
     - name: Set execute permission for Gradle Wrapper
       run: chmod +x gradlew
-
+    
+    - name: Start Fuseki
+      run: ./gradlew startFuseki &  # Start Fuseki im Hintergrund
+    
     - name: Build
       run: ./gradlew build
 
+    - name: Query
+      run: ./gradlew owlQuery
+
+    - name: Stop Fuseki
+      run: ./gradlew stopFuseki
+      
     - name: Upload
       if: ${{ always() }}
       uses: actions/upload-artifact@v4
