@@ -1,0 +1,23 @@
+{ "head": {
+    "vars": [ "uc" ]
+  } ,
+  "results": {
+    "bindings": [
+      { 
+        "uc": { "type": "uri" , "value": "http://example.com/actuator/description/usecases#maintain-position" }
+      } ,
+      { 
+        "uc": { "type": "uri" , "value": "http://example.com/actuator/description/usecases#provide-actuation-to-aileron" }
+      } ,
+      { 
+        "uc": { "type": "uri" , "value": "http://example.com/actuator/description/usecases#transmit-actuation-force" }
+      } ,
+      { 
+        "uc": { "type": "uri" , "value": "http://example.com/actuator/description/usecases#recover-energy" }
+      } ,
+      { 
+        "uc": { "type": "uri" , "value": "http://example.com/actuator/description/usecases#execute-failsafe-response" }
+      }
+    ]
+  }
+}

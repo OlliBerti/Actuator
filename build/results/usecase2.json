@@ -1,0 +1,164 @@
+{ "head": {
+    "vars": [ "uc_id" , "uc_name" , "aggregated_uc" , "interacts_with" , "achieves_obj" ]
+  } ,
+  "results": {
+    "bindings": [
+      { 
+        "uc_id": { "type": "literal" , "value": "UC 1" } ,
+        "uc_name": { "type": "literal" , "value": "provideActuationToAileron" } ,
+        "aggregated_uc": { "type": "literal" , "value": "executeFailSafeResponse" } ,
+        "interacts_with": { "type": "literal" , "value": "Aileron" } ,
+        "achieves_obj": { "type": "literal" , "value": "Main Objective" }
+      } ,
+      { 
+        "uc_id": { "type": "literal" , "value": "UC 1" } ,
+        "uc_name": { "type": "literal" , "value": "provideActuationToAileron" } ,
+        "aggregated_uc": { "type": "literal" , "value": "executeFailSafeResponse" } ,
+        "interacts_with": { "type": "literal" , "value": "Electric Power Supply" } ,
+        "achieves_obj": { "type": "literal" , "value": "Main Objective" }
+      } ,
+      { 
+        "uc_id": { "type": "literal" , "value": "UC 1" } ,
+        "uc_name": { "type": "literal" , "value": "provideActuationToAileron" } ,
+        "aggregated_uc": { "type": "literal" , "value": "executeFailSafeResponse" } ,
+        "interacts_with": { "type": "literal" , "value": "Environment" } ,
+        "achieves_obj": { "type": "literal" , "value": "Main Objective" }
+      } ,
+      { 
+        "uc_id": { "type": "literal" , "value": "UC 1" } ,
+        "uc_name": { "type": "literal" , "value": "provideActuationToAileron" } ,
+        "aggregated_uc": { "type": "literal" , "value": "executeFailSafeResponse" } ,
+        "interacts_with": { "type": "literal" , "value": "Flight Control Computer" } ,
+        "achieves_obj": { "type": "literal" , "value": "Main Objective" }
+      } ,
+      { 
+        "uc_id": { "type": "literal" , "value": "UC 1" } ,
+        "uc_name": { "type": "literal" , "value": "provideActuationToAileron" } ,
+        "aggregated_uc": { "type": "literal" , "value": "executeFailSafeResponse" } ,
+        "interacts_with": { "type": "literal" , "value": "Wing" } ,
+        "achieves_obj": { "type": "literal" , "value": "Main Objective" }
+      } ,
+      { 
+        "uc_id": { "type": "literal" , "value": "UC 1" } ,
+        "uc_name": { "type": "literal" , "value": "provideActuationToAileron" } ,
+        "aggregated_uc": { "type": "literal" , "value": "maintainPosition" } ,
+        "interacts_with": { "type": "literal" , "value": "Aileron" } ,
+        "achieves_obj": { "type": "literal" , "value": "Main Objective" }
+      } ,
+      { 
+        "uc_id": { "type": "literal" , "value": "UC 1" } ,
+        "uc_name": { "type": "literal" , "value": "provideActuationToAileron" } ,
+        "aggregated_uc": { "type": "literal" , "value": "maintainPosition" } ,
+        "interacts_with": { "type": "literal" , "value": "Electric Power Supply" } ,
+        "achieves_obj": { "type": "literal" , "value": "Main Objective" }
+      } ,
+      { 
+        "uc_id": { "type": "literal" , "value": "UC 1" } ,
+        "uc_name": { "type": "literal" , "value": "provideActuationToAileron" } ,
+        "aggregated_uc": { "type": "literal" , "value": "maintainPosition" } ,
+        "interacts_with": { "type": "literal" , "value": "Environment" } ,
+        "achieves_obj": { "type": "literal" , "value": "Main Objective" }
+      } ,
+      { 
+        "uc_id": { "type": "literal" , "value": "UC 1" } ,
+        "uc_name": { "type": "literal" , "value": "provideActuationToAileron" } ,
+        "aggregated_uc": { "type": "literal" , "value": "maintainPosition" } ,
+        "interacts_with": { "type": "literal" , "value": "Flight Control Computer" } ,
+        "achieves_obj": { "type": "literal" , "value": "Main Objective" }
+      } ,
+      { 
+        "uc_id": { "type": "literal" , "value": "UC 1" } ,
+        "uc_name": { "type": "literal" , "value": "provideActuationToAileron" } ,
+        "aggregated_uc": { "type": "literal" , "value": "maintainPosition" } ,
+        "interacts_with": { "type": "literal" , "value": "Wing" } ,
+        "achieves_obj": { "type": "literal" , "value": "Main Objective" }
+      } ,
+      { 
+        "uc_id": { "type": "literal" , "value": "UC 1" } ,
+        "uc_name": { "type": "literal" , "value": "provideActuationToAileron" } ,
+        "aggregated_uc": { "type": "literal" , "value": "recoverEnergy" } ,
+        "interacts_with": { "type": "literal" , "value": "Aileron" } ,
+        "achieves_obj": { "type": "literal" , "value": "Main Objective" }
+      } ,
+      { 
+        "uc_id": { "type": "literal" , "value": "UC 1" } ,
+        "uc_name": { "type": "literal" , "value": "provideActuationToAileron" } ,
+        "aggregated_uc": { "type": "literal" , "value": "recoverEnergy" } ,
+        "interacts_with": { "type": "literal" , "value": "Electric Power Supply" } ,
+        "achieves_obj": { "type": "literal" , "value": "Main Objective" }
+      } ,
+      { 
+        "uc_id": { "type": "literal" , "value": "UC 1" } ,
+        "uc_name": { "type": "literal" , "value": "provideActuationToAileron" } ,
+        "aggregated_uc": { "type": "literal" , "value": "recoverEnergy" } ,
+        "interacts_with": { "type": "literal" , "value": "Environment" } ,
+        "achieves_obj": { "type": "literal" , "value": "Main Objective" }
+      } ,
+      { 
+        "uc_id": { "type": "literal" , "value": "UC 1" } ,
+        "uc_name": { "type": "literal" , "value": "provideActuationToAileron" } ,
+        "aggregated_uc": { "type": "literal" , "value": "recoverEnergy" } ,
+        "interacts_with": { "type": "literal" , "value": "Flight Control Computer" } ,
+        "achieves_obj": { "type": "literal" , "value": "Main Objective" }
+      } ,
+      { 
+        "uc_id": { "type": "literal" , "value": "UC 1" } ,
+        "uc_name": { "type": "literal" , "value": "provideActuationToAileron" } ,
+        "aggregated_uc": { "type": "literal" , "value": "recoverEnergy" } ,
+        "interacts_with": { "type": "literal" , "value": "Wing" } ,
+        "achieves_obj": { "type": "literal" , "value": "Main Objective" }
+      } ,
+      { 
+        "uc_id": { "type": "literal" , "value": "UC 1" } ,
+        "uc_name": { "type": "literal" , "value": "provideActuationToAileron" } ,
+        "aggregated_uc": { "type": "literal" , "value": "transmitActuationForce" } ,
+        "interacts_with": { "type": "literal" , "value": "Aileron" } ,
+        "achieves_obj": { "type": "literal" , "value": "Main Objective" }
+      } ,
+      { 
+        "uc_id": { "type": "literal" , "value": "UC 1" } ,
+        "uc_name": { "type": "literal" , "value": "provideActuationToAileron" } ,
+        "aggregated_uc": { "type": "literal" , "value": "transmitActuationForce" } ,
+        "interacts_with": { "type": "literal" , "value": "Electric Power Supply" } ,
+        "achieves_obj": { "type": "literal" , "value": "Main Objective" }
+      } ,
+      { 
+        "uc_id": { "type": "literal" , "value": "UC 1" } ,
+        "uc_name": { "type": "literal" , "value": "provideActuationToAileron" } ,
+        "aggregated_uc": { "type": "literal" , "value": "transmitActuationForce" } ,
+        "interacts_with": { "type": "literal" , "value": "Environment" } ,
+        "achieves_obj": { "type": "literal" , "value": "Main Objective" }
+      } ,
+      { 
+        "uc_id": { "type": "literal" , "value": "UC 1" } ,
+        "uc_name": { "type": "literal" , "value": "provideActuationToAileron" } ,
+        "aggregated_uc": { "type": "literal" , "value": "transmitActuationForce" } ,
+        "interacts_with": { "type": "literal" , "value": "Flight Control Computer" } ,
+        "achieves_obj": { "type": "literal" , "value": "Main Objective" }
+      } ,
+      { 
+        "uc_id": { "type": "literal" , "value": "UC 1" } ,
+        "uc_name": { "type": "literal" , "value": "provideActuationToAileron" } ,
+        "aggregated_uc": { "type": "literal" , "value": "transmitActuationForce" } ,
+        "interacts_with": { "type": "literal" , "value": "Wing" } ,
+        "achieves_obj": { "type": "literal" , "value": "Main Objective" }
+      } ,
+      { 
+        "uc_id": { "type": "literal" , "value": "UC 1-1" } ,
+        "uc_name": { "type": "literal" , "value": "transmitActuationForce" }
+      } ,
+      { 
+        "uc_id": { "type": "literal" , "value": "UC 1-2" } ,
+        "uc_name": { "type": "literal" , "value": "maintainPosition" }
+      } ,
+      { 
+        "uc_id": { "type": "literal" , "value": "UC 1-3" } ,
+        "uc_name": { "type": "literal" , "value": "executeFailSafeResponse" }
+      } ,
+      { 
+        "uc_id": { "type": "literal" , "value": "UC 1-4" } ,
+        "uc_name": { "type": "literal" , "value": "recoverEnergy" }
+      }
+    ]
+  }
+}

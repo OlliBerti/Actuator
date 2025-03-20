@@ -1,0 +1,9 @@
+[2025-03-20 14:23:21] Server     INFO  Apache Jena Fuseki 4.6.1
+[2025-03-20 14:23:21] Server     INFO  Configuration file: ../.fuseki.ttl
+[2025-03-20 14:23:21] Server     INFO  Path = /Actuator
+[2025-03-20 14:23:21] Server     INFO  System
+[2025-03-20 14:23:21] Server     INFO    Memory: 15,9 GiB
+[2025-03-20 14:23:21] Server     INFO    Java:   17.0.12
+[2025-03-20 14:23:21] Server     INFO    OS:     Windows 11 10.0 amd64
+[2025-03-20 14:23:21] Server     INFO    PID:    12304
+Failed to bind to 0.0.0.0/0.0.0.0:3030
