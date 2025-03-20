@@ -53,7 +53,7 @@ jobs:
     - name: Set up Python 3
       uses: actions/setup-python@v4
       with: 
-        python-version: '3.12'
+        python-version: '3.13'
     
     - name: Install Requirements
       run: pip install -r src/ipynb/requirements.txt
@@ -64,7 +64,4 @@ jobs:
     - name: Convert Notebook to HTML
       run: python -m nbconvert --to html --no-input build/web/index.ipynb
 
-    - name: Publish
-      uses: actions/upload-pages-artifact@v2
-      with:
-        path: build/web
+
