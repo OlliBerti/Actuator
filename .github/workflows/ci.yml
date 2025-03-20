@@ -15,46 +15,35 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v3
-
     - name: Setup JDK
       uses: actions/setup-java@v3
       with:
         java-version: '17'
         distribution: 'temurin'
-
     - name: Setup Gradle
       uses: gradle/gradle-build-action@v2
-
-    - name: Set execute permission for Gradle Wrapper
+    - name: Set execute permission for gradlew
       run: chmod +x gradlew
-    
     - name: Start Fuseki
       run: ./gradlew startFuseki &  # Start Fuseki im Hintergrund
-    
     - name: Build
       run: ./gradlew build
-
     - name: Query
       run: ./gradlew owlQuery
-
     - name: Stop Fuseki
       run: ./gradlew stopFuseki
-      
     - name: Upload
       if: ${{ always() }}
       uses: actions/upload-artifact@v4
       with:
         name: build
         path: build/
-
     - name: Generate Docs
       run: ./gradlew generateDocs
-
     - name: Set up Python 3
       uses: actions/setup-python@v4
       with: 
-        python-version: '3.10'
-    
+        python-version: '3.13'
     - name: Install Requirements
       run: pip install -r src/ipynb/requirements.txt
     - name: Run Notebook
