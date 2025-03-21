@@ -1,0 +1,21 @@
+PREFIX base: <http://example.com/actuator/vocabulary/base#>
+PREFIX actuator: <http://example.com/actuator/vocabulary/actuator#>
+PREFIX objectives: <http://example.com/actuator/description/objectives#>
+PREFIX usecases: <http://example.com/actuator/description/usecases#>
+
+SELECT DISTINCT ?uc1_id ?uc1_name ?uc2_id ?uc2_name ?actor_id ?actor_name
+WHERE {
+    # Einzelner UseCase und seine Aggregationen
+    ?uc1 a actuator:UseCase ;
+        base:hasIdentifier ?uc1_id ;
+        base:hasCanonicalName ?uc1_name ;
+        base:aggregates ?uc2 ;
+        actuator:InteractsWith ?actor .
+
+    # Aktor-Informationen
+    ?actor a actuator:Actor ;
+        base:hasIdentifier ?actor_id ;
+        base:hasCanonicalName ?actor_name .
+}
+ORDER BY ?uc1_id
+
