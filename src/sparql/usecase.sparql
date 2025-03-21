@@ -1,0 +1,21 @@
+PREFIX base: <http://example.com/actuator/vocabulary/base#>
+PREFIX actuator: <http://example.com/actuator/vocabulary/actuator#>
+PREFIX objectives: <http://example.com/actuator/description/objectives#>
+PREFIX usecases: <http://example.com/actuator/description/usecases#>
+
+SELECT ?useCase ?useCaseName ?aggregatedUseCase ?aggregatedUseCaseName ?actor ?actorName
+WHERE {
+  ?useCase a actuator:UseCase ;
+           base:hasCanonicalName ?useCaseName .
+  
+  OPTIONAL {
+    ?useCase base:aggregates ?aggregatedUseCase .
+    ?aggregatedUseCase base:hasCanonicalName ?aggregatedUseCaseName .
+  }
+  
+  OPTIONAL {
+    ?useCase actuator:InteractsWith ?actor .
+    ?actor base:hasCanonicalName ?actorName .
+  }
+}
+ORDER BY ?useCaseName

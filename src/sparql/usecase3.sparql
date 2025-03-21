@@ -1,26 +1,16 @@
-PREFIX base:        <http://example.com/actuator/vocabulary/base#>
-PREFIX actuator:    <http://example.com/actuator/vocabulary/actuator#>
-PREFIX objectives:  <http://example.com/actuator/description/objectives#>
+PREFIX base: <http://example.com/actuator/vocabulary/base#>
+PREFIX actuator: <http://example.com/actuator/vocabulary/actuator#>
+PREFIX objectives: <http://example.com/actuator/description/objectives#>
+PREFIX usecases: <http://example.com/actuator/description/usecases#>
 
-SELECT DISTINCT ?uc_id ?uc_name ?aggregated_uc ?interacts_with ?achieves_obj
+SELECT DISTINCT ?uc1_id ?uc1_name ?uc2_id ?uc2_name
 WHERE {
-    ?uc a actuator:UseCase ;
-        base:hasIdentifier ?uc_id ;
-        base:hasCanonicalName ?uc_name .
-    
-    OPTIONAL {
-        ?uc base:aggregates ?agg .
-        ?agg base:hasCanonicalName ?aggregated_uc .
-    }
-    
-    OPTIONAL {
-        ?uc actuator:InteractsWith ?actor .
-        ?actor base:hasCanonicalName ?interacts_with .
-    }
-    
-    OPTIONAL {
-        ?uc actuator:Achieves ?obj .
-        ?obj base:hasCanonicalName ?achieves_obj .
-    }
+    ?uc1 a actuator:UseCase ;
+        base:hasIdentifier ?uc1_id ;
+        base:hasCanonicalName ?uc1_name ;
+        base:aggregates ?uc2 .
+
+    ?uc2 base:hasIdentifier ?uc2_id ;
+         base:hasCanonicalName ?uc2_name .
 }
-ORDER BY ?uc_id ?aggregated_uc ?interacts_with ?achieves_obj
+ORDER BY ?uc1_id ?uc2_id

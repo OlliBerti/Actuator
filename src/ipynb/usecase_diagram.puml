@@ -1,0 +1,11 @@
+@startuml
+usecase "provideActuationToAileron" as UC 1
+usecase "transmitActuationForce" as UC 1-1
+usecase "maintainPosition" as UC 1-2
+usecase "executeFailSafeResponse" as UC 1-3
+usecase "recoverEnergy" as UC 1-4
+UC 1 -- UC 1-1
+UC 1 -- UC 1-2
+UC 1 -- UC 1-3
+UC 1 -- UC 1-4
+@enduml
